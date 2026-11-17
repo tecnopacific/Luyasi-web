@@ -1,0 +1,120 @@
+{
+  "version": "2026-11-11",
+  "verified": false,
+  "note": "Números de referencia. Deben verificarse antes del lanzamiento (protocolo del brief, punto 9).",
+  "countries": [
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "emergency": {
+        "name": "Emergencias",
+        "number": "123",
+        "detail": "Línea nacional de emergencias"
+      },
+      "lines": [
+        {
+          "name": "Salud mental",
+          "number": "192 opción 4",
+          "detail": "Ministerio de Salud y Protección Social",
+          "dial": "192"
+        },
+        {
+          "name": "Línea 106",
+          "number": "106",
+          "detail": "Escucha y orientación en Bogotá"
+        }
+      ]
+    },
+    {
+      "code": "MX",
+      "name": "México",
+      "flag": "🇲🇽",
+      "emergency": {
+        "name": "Emergencias",
+        "number": "911",
+        "detail": "Línea nacional de emergencias"
+      },
+      "lines": [
+        {
+          "name": "Línea de la Vida",
+          "number": "800 911 2000",
+          "detail": "Atención las 24 horas, gratuita"
+        }
+      ]
+    },
+    {
+      "code": "ES",
+      "name": "España",
+      "flag": "🇪🇸",
+      "emergency": {
+        "name": "Emergencias",
+        "number": "112",
+        "detail": "Número europeo de emergencias"
+      },
+      "lines": [
+        {
+          "name": "Línea 024",
+          "number": "024",
+          "detail": "Atención a la conducta suicida, 24 horas"
+        }
+      ]
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "emergency": {
+        "name": "Emergencias",
+        "number": "911",
+        "detail": "Línea de emergencias"
+      },
+      "lines": [
+        {
+          "name": "Asistencia al Suicida",
+          "number": "0800 345 1435",
+          "detail": "Línea nacional gratuita"
+        },
+        {
+          "name": "Línea 135",
+          "number": "135",
+          "detail": "CABA y Gran Buenos Aires"
+        }
+      ]
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "flag": "🇨🇱",
+      "emergency": {
+        "name": "Ambulancia",
+        "number": "131",
+        "detail": "SAMU, emergencias médicas"
+      },
+      "lines": [
+        {
+          "name": "Prevención del suicidio",
+          "number": "*4141",
+          "detail": "Ministerio de Salud, 24 horas"
+        }
+      ]
+    },
+    {
+      "code": "US",
+      "name": "Estados Unidos",
+      "flag": "🇺🇸",
+      "emergency": {
+        "name": "Emergencias",
+        "number": "911",
+        "detail": "Línea nacional de emergencias"
+      },
+      "lines": [
+        {
+          "name": "Línea 988",
+          "number": "988",
+          "detail": "Crisis y suicidio, opción en español"
+        }
+      ]
+    }
+  ]
+}
