@@ -18,7 +18,6 @@ export default function Privacy() {
       title="Política de privacidad"
       summary="Hablar de tu fe o de cómo te sientes es íntimo. Aquí explicamos qué datos trata Luyasi, para qué, con quién y durante cuánto tiempo."
       updated={site.legalUpdated}
-      legal
     >
       <h2>En pocas palabras</h2>
       <ul>
@@ -140,7 +139,7 @@ export default function Privacy() {
       <ul>
         <li>
           <strong>Amazon Web Services</strong>: alojamiento, base de datos, inicio de sesión (Amazon Cognito), IA (Amazon
-          Bedrock), voz a texto (Amazon Transcribe) y texto a voz (Amazon Polly). Tenemos activada la exclusión que impide
+          Bedrock), voz a texto (Amazon Transcribe), texto a voz (Amazon Polly) y correo (Amazon SES). Tenemos activada la exclusión que impide
           que Amazon use el contenido para mejorar sus servicios de IA.
         </li>
         <li>
@@ -190,6 +189,10 @@ export default function Privacy() {
             <tr>
               <td>Audio que dictas</td>
               <td>No se guarda</td>
+            </tr>
+            <tr>
+              <td>Correos que nos escribes a soporte o privacidad</td>
+              <td>Se reenvían a nuestro buzón de atención; la copia en el servidor de correo se borra a los 7 días</td>
             </tr>
             <tr>
               <td>Registros técnicos</td>

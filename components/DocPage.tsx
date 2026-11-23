@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { legalLinks, site } from "@/app/config";
+import { legalLinks } from "@/app/config";
 
 const dateFormat = new Intl.DateTimeFormat("es-CO", {
   day: "numeric",
@@ -14,14 +14,12 @@ export function DocPage({
   title,
   summary,
   updated,
-  legal = false,
   children,
 }: {
   path: string;
   title: string;
   summary: string;
   updated?: string;
-  legal?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -46,14 +44,6 @@ export function DocPage({
           ))}
         </nav>
         <article className="doc">
-          {legal && site.legalReviewPending ? (
-            <div className="doc-note">
-              <p>
-                <strong>Versión previa al lanzamiento.</strong> Este texto describe cómo funcionará Luyasi y está en
-                revisión legal. Puede cambiar antes de que la app esté disponible en las tiendas.
-              </p>
-            </div>
-          ) : null}
           {children}
         </article>
       </div>

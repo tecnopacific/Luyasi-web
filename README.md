@@ -12,6 +12,15 @@ npm run check    # tipos
 npm run build    # exporta a out/
 ```
 
+## Publicar
+
+En luyasi.com: S3 privado detrás de CloudFront, montado en la pila
+`Luyasi-domain` del repo Luyasi-App (`infra/lib/domain-stack.ts`).
+
+```bash
+AWS_PROFILE=luyasi scripts/deploy.sh   # compila, sube y limpia la caché
+```
+
 ## Rutas
 
 - `/` — Inicio
@@ -21,14 +30,11 @@ npm run build    # exporta a out/
 - `/terminos` — Términos y condiciones
 - `/eliminar-cuenta` — Canal web para pedir el borrado (lo exigen las tiendas)
 
-## Pendiente antes de publicar
+## Pendiente
 
 Todo está centralizado en `app/config.ts`:
 
-- Dominio y buzones (`soporte@`, `privacidad@`): el dominio aún no está registrado.
 - Enlaces de App Store y Google Play: al añadirlos, aparecen los botones.
-- `legalReviewPending`: ponerlo en `false` cuando un abogado apruebe la política
-  y los términos. Mientras tanto, ambas páginas muestran un aviso.
 
 Además:
 

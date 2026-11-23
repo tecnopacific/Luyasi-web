@@ -1,10 +1,9 @@
-// Valores públicos centralizados. Los marcados como PENDIENTE deben
-// confirmarse antes de publicar el sitio.
+// Valores públicos centralizados.
 export const site = {
   name: "Luyasi",
-  // PENDIENTE: el dominio aún no está registrado.
+  // Registrado en Route 53 el 2026-11-23.
   domain: "https://luyasi.com",
-  // PENDIENTE: buzones por crear en el dominio definitivo.
+  // Reciben en SES y se reenvían al equipo (Luyasi-App: docs/correo.md).
   supportEmail: "soporte@luyasi.com",
   privacyEmail: "privacidad@luyasi.com",
   // Luyasi es un producto de TecnoPacific, como Yukiia. Datos tomados de
@@ -17,10 +16,7 @@ export const site = {
     address:
       "Centro Comercial Bellavista, Cra. 47, Local 57, piso 1, Buenaventura, Valle del Cauca, Colombia",
   },
-  legalUpdated: "2026-11-12",
-  // Mientras sea true, las páginas legales lo dicen: el brief exige revisión
-  // de un abogado antes del lanzamiento.
-  legalReviewPending: true,
+  legalUpdated: "2026-11-23",
   appStoreUrl: "",
   playStoreUrl: "",
 } as const;

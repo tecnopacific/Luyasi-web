@@ -18,7 +18,6 @@ export default function Terms() {
       title="Términos y condiciones"
       summary="Las reglas para usar Luyasi, escritas para que se entiendan. Al usar la app, las aceptas."
       updated={site.legalUpdated}
-      legal
     >
       <h2 id="servicio">Quién presta el servicio</h2>
       <p>
