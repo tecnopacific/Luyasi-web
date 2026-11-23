@@ -314,7 +314,7 @@ main {
 
 .embrace {
   position: relative;
-  width: min(100%, 700px);
+  width: min(100%, 740px);
   justify-self: center;
   aspect-ratio: 655 / 640;
   container-type: inline-size;
@@ -362,7 +362,7 @@ main {
 }
 
 .embrace .phone {
-  --w: 37cqw;
+  --w: 42cqw;
   position: absolute;
   left: 50%;
   top: 54%;
