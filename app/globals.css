@@ -23,6 +23,8 @@
   --accent: var(--plum);
   --warm: #9e4b37;
   --danger: #9e2b2b;
+  --bubble: #f3e2e9;
+  --plum-line: var(--plum);
 
   --dusk: var(--plum);
   --dusk-deep: #4b2139;
@@ -44,6 +46,8 @@
     --accent: #e6b7d0;
     --warm: #eba48f;
     --danger: #f08a83;
+    --bubble: #3a2531;
+    --plum-line: #e6b7d0;
     --dusk: #3a1d2d;
     --dusk-deep: #120b10;
   }
@@ -490,22 +494,17 @@ main {
 }
 
 /* ---------- Límites y privacidad ----------
-   Misma retícula en las dos: el título a la izquierda, el contenido a la
-   derecha. Los límites son frases grandes; la privacidad, filas por momento. */
+   Los límites, como una conversación de la app (mismas burbujas que en las
+   capturas). La privacidad, una franja corta con dibujos a mano. */
 
-.limits,
-.yours {
+.limits {
   max-width: calc(var(--max) + 2 * var(--gutter));
   margin: 0 auto;
-  padding: clamp(64px, 9vw, 120px) var(--gutter) 0;
+  padding: clamp(56px, 7vw, 88px) var(--gutter) clamp(40px, 5vw, 64px);
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
-  gap: 32px clamp(32px, 6vw, 96px);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 28px clamp(32px, 6vw, 88px);
   align-items: start;
-}
-
-.yours {
-  padding-bottom: clamp(64px, 9vw, 120px);
 }
 
 .limits h2,
@@ -516,78 +515,112 @@ main {
 }
 
 .limits-intro p {
-  margin: 16px 0 0;
-  max-width: 30ch;
+  margin: 12px 0 0;
+  font-size: 1.25rem;
   color: var(--muted);
 }
 
-.limits-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.limits-chat {
   display: grid;
-  gap: clamp(28px, 3.5vw, 44px);
+  gap: 18px;
+  max-width: 34rem;
 }
 
-.limits-not {
+.limits-pair {
+  display: grid;
+  gap: 8px;
+}
+
+.limits-pair p {
   margin: 0;
-  font-size: clamp(1.45rem, 1.1rem + 1.2vw, 2.1rem);
-  line-height: 1.15;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  max-width: 24ch;
+  font-size: 1.05rem;
+  line-height: 1.45;
 }
 
-.limits-instead {
-  margin: 10px 0 0;
-  max-width: 46ch;
-  color: var(--muted);
+/* Como en la app: lo tuyo a la derecha, en una burbuja rosada. */
+.bubble-you {
+  justify-self: end;
+  max-width: 80%;
+  padding: 9px 16px;
+  border-radius: 20px 20px 6px 20px;
+  background: var(--bubble);
+  font-weight: 700;
 }
 
-.yours-intro .text-link {
-  display: inline-block;
-  margin-top: 18px;
+/* Luyasi a la izquierda, sin burbuja, con su símbolo. */
+.bubble-luyasi {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  max-width: 88%;
+}
+
+.bubble-luyasi svg {
+  margin-top: 2px;
+}
+
+.yours {
+  max-width: calc(var(--max) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 64px) var(--gutter) clamp(56px, 7vw, 88px);
+}
+
+.yours-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 32px;
 }
 
 .yours-list {
-  margin: 0;
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px clamp(20px, 3vw, 40px);
 }
 
-.yours-list div {
+.yours-list li {
   display: grid;
-  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
-  gap: 4px 28px;
-  padding: 18px 0;
+  gap: 10px;
+  align-content: start;
 }
 
-.yours-list div:first-child {
-  padding-top: 0;
-}
-
-.yours-list dt {
-  font-weight: 900;
-  color: var(--warm);
-}
-
-.yours-list dd {
+.yours-list p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   line-height: 1.4;
   font-weight: 700;
-  max-width: 42ch;
+  max-width: 22ch;
 }
 
-@media (max-width: 760px) {
-  .limits,
-  .yours {
+.doodle {
+  color: var(--terracotta);
+}
+
+.doodle-arrow {
+  display: block;
+  margin: 18px 0 0 24px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 860px) {
+  .doodle-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .limits {
     grid-template-columns: 1fr;
   }
 
-  .yours-list div {
-    grid-template-columns: 1fr;
+  .yours-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

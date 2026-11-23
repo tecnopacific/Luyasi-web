@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { LEFT_ARC, RIGHT_ARC } from "@/components/Abrazo";
+import { AbrazoMark, LEFT_ARC, RIGHT_ARC } from "@/components/Abrazo";
+import { ArrowDoodle, DoorDoodle, NoAdsDoodle, PhoneDoodle, SwitchDoodle } from "@/components/Doodles";
 import { HelpLines } from "@/components/HelpLines";
 import { Phone } from "@/components/Phone";
 import { StoreLinks } from "@/components/StoreLinks";
@@ -28,28 +29,24 @@ const inside = [
 
 const limits = [
   {
-    not: "No es sacerdote, pastor ni terapeuta.",
-    instead: "Te acompaña y te escucha, pero no da dirección espiritual ni terapia.",
+    ask: "¿Eres sacerdote o terapeuta?",
+    answer: "No. Te escucho y te acompaño, pero no reemplazo a quienes te quieren ni a un profesional.",
   },
   {
-    not: "No habla en nombre de Dios.",
-    instead: "Cada oración y reflexión va marcada como escrita por Luyasi.",
+    ask: "¿Hablas en nombre de Dios?",
+    answer: "No. Cada oración que escribo va marcada como escrita por Luyasi.",
   },
   {
-    not: "No promete milagros ni curaciones.",
-    instead: "Tampoco te dice qué creer ni juzga lo que crees.",
-  },
-  {
-    not: "No reemplaza a quienes te quieren ni a un profesional.",
-    instead: "Si estás en peligro, deja la conversación a un lado y te muestra a quién llamar.",
+    ask: "¿Me puedes curar?",
+    answer: "No prometo milagros ni curaciones. Si estás en peligro, te muestro a quién llamar.",
   },
 ];
 
 const yours = [
-  { when: "Sin cuenta", what: "Tus conversaciones se quedan en tu teléfono. No las guardamos." },
-  { when: "Con cuenta", what: "Tú eliges si guardar el historial, y lo borras cuando quieras." },
-  { when: "Siempre", what: "Tus mensajes no se usan para publicidad ni para entrenar IA." },
-  { when: "Si te vas", what: "Borras tu cuenta desde la app, y con ella lo que guardamos." },
+  { Doodle: PhoneDoodle, text: "Sin cuenta, tus conversaciones se quedan en tu teléfono." },
+  { Doodle: SwitchDoodle, text: "El historial se guarda solo si tú lo activas." },
+  { Doodle: NoAdsDoodle, text: "Nada de publicidad ni de entrenar IA con lo que cuentas." },
+  { Doodle: DoorDoodle, text: "Borras tu cuenta desde la app cuando quieras." },
 ];
 
 export default function Home() {
@@ -96,33 +93,37 @@ export default function Home() {
       <section className="limits" aria-labelledby="limits-title">
         <div className="limits-intro">
           <h2 id="limits-title">Lo que Luyasi no es</h2>
-          <p>Es una inteligencia artificial que escucha. Por eso tiene claro dónde termina su papel.</p>
+          <p>Se lo puedes preguntar.</p>
+          <ArrowDoodle />
         </div>
-        <ul className="limits-list">
+        <div className="limits-chat">
           {limits.map((item) => (
-            <li key={item.not}>
-              <p className="limits-not">{item.not}</p>
-              <p className="limits-instead">{item.instead}</p>
-            </li>
+            <div key={item.ask} className="limits-pair">
+              <p className="bubble-you">{item.ask}</p>
+              <p className="bubble-luyasi">
+                <AbrazoMark size={22} />
+                <span>{item.answer}</span>
+              </p>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section className="yours" id="privacidad" aria-labelledby="yours-title">
-        <div className="yours-intro">
+        <div className="yours-head">
           <h2 id="yours-title">Lo que cuentas es tuyo</h2>
           <Link href="/privacidad" className="text-link">
             Leer la política de privacidad
           </Link>
         </div>
-        <dl className="yours-list">
-          {yours.map((item) => (
-            <div key={item.when}>
-              <dt>{item.when}</dt>
-              <dd>{item.what}</dd>
-            </div>
+        <ul className="yours-list">
+          {yours.map(({ Doodle, text }) => (
+            <li key={text}>
+              <Doodle />
+              <p>{text}</p>
+            </li>
           ))}
-        </dl>
+        </ul>
       </section>
 
       <section className="urgent" aria-labelledby="urgent-title">
