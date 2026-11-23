@@ -34,7 +34,8 @@ AWS_PROFILE=luyasi scripts/deploy.sh   # compila, sube y limpia la caché
 
 Todo está centralizado en `app/config.ts`:
 
-- Enlaces de App Store y Google Play: al añadirlos, aparecen los botones.
+- Enlaces de App Store y Google Play (`app/config.ts`): al añadirlos, las
+  insignias pasan a enlazar a cada ficha.
 
 Además:
 
@@ -55,6 +56,11 @@ Además:
 - Las imágenes de `public/app/` son capturas reales de la app (390 × 844),
   generadas desde su código con una prueba de Flutter (`matchesGoldenFile`).
   Si la app cambia, se regeneran; no usar maquetas dibujadas.
-- Sin líneas divisorias, tarjetas, sombras ni degradados. El punto ámbar marca
-  la opción elegida o la página actual.
+- Sin líneas divisorias, tarjetas, sombras, degradados ni viñetas. La opción
+  elegida o la página actual se marca con un subrayado terracota.
+- Las insignias de App Store y Google Play son las oficiales en español
+  (`public/stores/`) y se muestran siempre; sin enlace en `app/config.ts`, no
+  llevan a ninguna parte.
+- El pie de página repite los arcos del hero en el tono del fondo: el abrazo
+  abre y cierra la página.
 - No inventar testimonios, cifras ni reseñas.

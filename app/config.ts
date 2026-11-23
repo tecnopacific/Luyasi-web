@@ -12,7 +12,6 @@ export const site = {
     name: "TecnoPacific",
     legalName: "TecnoPacific Ingeniería S.A.S.",
     website: "https://www.tecnopacific.com/",
-    location: "Buenaventura, Valle del Cauca, Colombia",
     address:
       "Centro Comercial Bellavista, Cra. 47, Local 57, piso 1, Buenaventura, Valle del Cauca, Colombia",
   },

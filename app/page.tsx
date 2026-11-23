@@ -26,6 +26,32 @@ const inside = [
   },
 ];
 
+const limits = [
+  {
+    not: "No es sacerdote, pastor ni terapeuta.",
+    instead: "Te acompaña y te escucha, pero no da dirección espiritual ni terapia.",
+  },
+  {
+    not: "No habla en nombre de Dios.",
+    instead: "Cada oración y reflexión va marcada como escrita por Luyasi.",
+  },
+  {
+    not: "No promete milagros ni curaciones.",
+    instead: "Tampoco te dice qué creer ni juzga lo que crees.",
+  },
+  {
+    not: "No reemplaza a quienes te quieren ni a un profesional.",
+    instead: "Si estás en peligro, deja la conversación a un lado y te muestra a quién llamar.",
+  },
+];
+
+const yours = [
+  { when: "Sin cuenta", what: "Tus conversaciones se quedan en tu teléfono. No las guardamos." },
+  { when: "Con cuenta", what: "Tú eliges si guardar el historial, y lo borras cuando quieras." },
+  { when: "Siempre", what: "Tus mensajes no se usan para publicidad ni para entrenar IA." },
+  { when: "Si te vas", what: "Borras tu cuenta desde la app, y con ella lo que guardamos." },
+];
+
 export default function Home() {
   return (
     <main id="contenido">
@@ -67,28 +93,36 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="facts" id="privacidad">
-        <div>
-          <h2>Lo que Luyasi no es</h2>
-          <ul>
-            <li>No es sacerdote, pastor ni terapeuta.</li>
-            <li>No habla en nombre de Dios.</li>
-            <li>No promete milagros ni curaciones.</li>
-            <li>No reemplaza a quienes te quieren ni a un profesional.</li>
-          </ul>
+      <section className="limits" aria-labelledby="limits-title">
+        <div className="limits-intro">
+          <h2 id="limits-title">Lo que Luyasi no es</h2>
+          <p>Es una inteligencia artificial que escucha. Por eso tiene claro dónde termina su papel.</p>
         </div>
-        <div>
-          <h2>Lo que cuentas es tuyo</h2>
-          <ul>
-            <li>Sin cuenta, tus conversaciones no se guardan en nuestros servidores.</li>
-            <li>El historial es opcional y lo borras cuando quieras.</li>
-            <li>Tus mensajes no se usan para publicidad ni para entrenar IA.</li>
-            <li>Borras tu cuenta desde la app.</li>
-          </ul>
+        <ul className="limits-list">
+          {limits.map((item) => (
+            <li key={item.not}>
+              <p className="limits-not">{item.not}</p>
+              <p className="limits-instead">{item.instead}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="yours" id="privacidad" aria-labelledby="yours-title">
+        <div className="yours-intro">
+          <h2 id="yours-title">Lo que cuentas es tuyo</h2>
           <Link href="/privacidad" className="text-link">
             Leer la política de privacidad
           </Link>
         </div>
+        <dl className="yours-list">
+          {yours.map((item) => (
+            <div key={item.when}>
+              <dt>{item.when}</dt>
+              <dd>{item.what}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section className="urgent" aria-labelledby="urgent-title">
