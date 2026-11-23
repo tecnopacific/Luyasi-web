@@ -32,8 +32,9 @@ export default function Privacy() {
 
       <h2 id="responsable">Quién es responsable</h2>
       <p>
-        El responsable del tratamiento de tus datos es {operator.legalName}, con domicilio en {operator.address}. Para
-        cualquier asunto de privacidad, escríbenos a <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>.
+        El responsable del tratamiento de tus datos es <a href={operator.website}>{operator.legalName}</a> (en adelante,
+        «TecnoPacific»), con sede en {operator.location}. Para cualquier asunto de privacidad, escríbenos a{" "}
+        <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>.
       </p>
 
       <h2 id="datos">Qué datos tratamos y para qué</h2>

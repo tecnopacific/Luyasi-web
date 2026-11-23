@@ -7,13 +7,13 @@ export const site = {
   supportEmail: "soporte@luyasi.com",
   privacyEmail: "privacidad@luyasi.com",
   // Luyasi es un producto de TecnoPacific, como Yukiia. Datos tomados de
-  // tecnopacifc-web (nosotros y contacto). No se incluye un NIT sin verificar.
+  // tecnopacifc-web (nosotros y contacto). Como en Yukiia: la sede (ciudad),
+  // sin dirección de la calle ni un NIT sin verificar.
   operator: {
     name: "TecnoPacific",
     legalName: "TecnoPacific Ingeniería S.A.S.",
     website: "https://www.tecnopacific.com/",
-    address:
-      "Centro Comercial Bellavista, Cra. 47, Local 57, piso 1, Buenaventura, Valle del Cauca, Colombia",
+    location: "Buenaventura, Valle del Cauca, Colombia",
   },
   legalUpdated: "2026-11-23",
   appStoreUrl: "",

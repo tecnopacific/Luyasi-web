@@ -21,8 +21,9 @@ export default function Terms() {
     >
       <h2 id="servicio">Quién presta el servicio</h2>
       <p>
-        Luyasi es una app de {operator.legalName}, con domicilio en {operator.address}. En estos términos, «nosotros» se
-        refiere a esa empresa y «tú», a quien usa la app.
+        Luyasi es un producto desarrollado y operado por <a href={operator.website}>{operator.legalName}</a> (en adelante,
+        «TecnoPacific»), con sede en {operator.location}. En estos términos, «nosotros» se refiere a TecnoPacific y
+        «tú», a quien usa la app.
       </p>
 
       <h2 id="que-es">Qué es Luyasi</h2>
